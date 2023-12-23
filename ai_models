@@ -1,0 +1,13 @@
+```
+ai_models
+│
+├── personalized_learning_model
+│   ├── model.py
+│   ├── train.py
+│   └── predict.py
+│
+└── chatbot_model
+    ├── model.py
+    ├── train.py
+    └── predict.py
+```

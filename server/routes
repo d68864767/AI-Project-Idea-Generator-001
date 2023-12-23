@@ -1,0 +1,34 @@
+// server/routes/index.js
+
+const express = require('express');
+const router = express.Router();
+
+// Import controllers
+const userController = require('../controllers/userController');
+const courseController = require('../controllers/courseController');
+const exerciseController = require('../controllers/exerciseController');
+const chatbotController = require('../controllers/chatbotController');
+
+// User routes
+router.post('/register', userController.register);
+router.post('/login', userController.login);
+router.get('/profile', userController.getProfile);
+
+// Course routes
+router.get('/courses', courseController.getAllCourses);
+router.get('/courses/:id', courseController.getCourseById);
+router.post('/courses', courseController.createCourse);
+router.put('/courses/:id', courseController.updateCourse);
+router.delete('/courses/:id', courseController.deleteCourse);
+
+// Exercise routes
+router.get('/exercises', exerciseController.getAllExercises);
+router.get('/exercises/:id', exerciseController.getExerciseById);
+router.post('/exercises', exerciseController.createExercise);
+router.put('/exercises/:id', exerciseController.updateExercise);
+router.delete('/exercises/:id', exerciseController.deleteExercise);
+
+// Chatbot routes
+router.post('/chatbot', chatbotController.getChatbotResponse);
+
+module.exports = router;
